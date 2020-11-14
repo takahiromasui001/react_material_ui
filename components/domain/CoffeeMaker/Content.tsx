@@ -1,7 +1,7 @@
 import { Grid } from '@material-ui/core'
 import React from 'react'
 import CoffeeCard from './CoffeeCard'
-import CoffeeMakerList from '../constants/coofeeMakerList'
+import CoffeeMakerList from '../../../constants/coofeeMakerList'
 
 const Content: React.FC = () => {
   const getCoffeeMakerCard = (coffeeMakerObj) => {

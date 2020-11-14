@@ -1,11 +1,19 @@
+import Link from 'next/link'
 import React from 'react'
-import Content from '../components/Content'
-import Layout from '../components/Layout'
 
 export default function Home() {
   return (
-    <Layout>
-      <Content />
-    </Layout>
+    <>
+      <div>
+        <Link href="/coffee-makers">
+          <a>CoffeeMakers</a>
+        </Link>
+      </div>
+      <div>
+        <Link href="/checkout">
+          <a>checkout</a>
+        </Link>
+      </div>
+    </>
   )
 }
