@@ -5,6 +5,9 @@ import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
+import { CardHeader, Avatar, IconButton, CardMedia } from '@material-ui/core'
+import ShareIcon from '@material-ui/icons/Share'
+import { red } from '@material-ui/core/colors'
 
 const useStyles = makeStyles({
   root: {
@@ -21,14 +24,29 @@ const useStyles = makeStyles({
   pos: {
     marginBottom: 12,
   },
+  avatar: {
+    backgroundColor: red[500],
+  },
 })
 
-const CoffeeCard = () => {
+const CoffeeCard = (props) => {
   const classes = useStyles()
   const bull = <span className={classes.bullet}>•</span>
+  const { avatarSrc, title, subtitle, description, imgSrc } = props
 
   return (
     <Card className={classes.root}>
+      <CardHeader
+        avatar={<Avatar src={avatarSrc} />}
+        action={
+          <IconButton aria-label="settings">
+            <ShareIcon />
+          </IconButton>
+        }
+        title={title}
+        subheader={subtitle}
+      />
+      <CardMedia style={{ height: '150px' }} image={imgSrc} />
       <CardContent>
         <Typography
           className={classes.title}
@@ -50,7 +68,8 @@ const CoffeeCard = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button size="small">BUY NOW</Button>
+        <Button size="small">OFFER</Button>
       </CardActions>
     </Card>
   )
