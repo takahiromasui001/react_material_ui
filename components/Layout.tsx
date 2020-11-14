@@ -9,11 +9,11 @@ const Layout: React.FC = ({ children }) => {
         <Header />
       </Grid>
       <Grid item container>
-        <Grid item sm={2} />
+        <Grid item xs={false} sm={2} />
         <Grid item xs={12} sm={8}>
           {children}
         </Grid>
-        <Grid item xs={2} />
+        <Grid item xs={false} sm={2} />
       </Grid>
     </Grid>
   )
