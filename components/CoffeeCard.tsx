@@ -9,35 +9,13 @@ import { CardHeader, Avatar, IconButton, CardMedia } from '@material-ui/core'
 import ShareIcon from '@material-ui/icons/Share'
 import { red } from '@material-ui/core/colors'
 
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-  avatar: {
-    backgroundColor: red[500],
-  },
-})
-
 const CoffeeCard = (props) => {
-  const classes = useStyles()
-  const bull = <span className={classes.bullet}>•</span>
-  const { avatarSrc, title, subtitle, description, imgSrc } = props
+  const { avatarUrl, title, subtitle, description, imageUrl } = props
 
   return (
-    <Card className={classes.root}>
+    <Card>
       <CardHeader
-        avatar={<Avatar src={avatarSrc} />}
+        avatar={<Avatar src={avatarUrl} />}
         action={
           <IconButton aria-label="settings">
             <ShareIcon />
@@ -46,25 +24,10 @@ const CoffeeCard = (props) => {
         title={title}
         subheader={subtitle}
       />
-      <CardMedia style={{ height: '150px' }} image={imgSrc} />
+      <CardMedia style={{ height: '150px' }} image={imageUrl} />
       <CardContent>
-        <Typography
-          className={classes.title}
-          color="textSecondary"
-          gutterBottom
-        >
-          Word of the Day
-        </Typography>
-        <Typography variant="h5" component="h2">
-          be{bull}nev{bull}o{bull}lent
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          adjective
-        </Typography>
         <Typography variant="body2" component="p">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
+          {description}
         </Typography>
       </CardContent>
       <CardActions>
