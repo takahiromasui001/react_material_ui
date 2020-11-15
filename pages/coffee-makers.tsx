@@ -1,8 +1,13 @@
 import React from 'react'
-import Content from '../components/domain/CoffeeMaker/Content'
+import Layout from '../components/Layout'
+import Content from '../components/pages/CoffeeMaker/Content'
 
 const CofeeMakers = () => {
-  return <Content />
+  return (
+    <Layout>
+      <Content />
+    </Layout>
+  )
 }
 
 export default CofeeMakers
